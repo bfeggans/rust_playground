@@ -46,13 +46,14 @@ pub fn for_loop_stuff() {
 }
 
 pub fn match_stuff() {
-    let country_code = 467;
+    let country_code = 44;
 
     let country = match country_code {
         44 => "UK",
         46 => "Sweden",
         7 => "Russia",
-        _ => "unknown"
+        1...999 => "unknown",
+        _ => "invalid" //assuming valid codes are all in the range of 1 - 999
     };
 
     println!("Country with code {} is {}", country_code, country);
