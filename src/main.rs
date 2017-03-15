@@ -11,8 +11,7 @@ fn main() {
     //stackheap::stack_and_heap();
     // controlflow::match_stuff();
 
-    // datastructures::structures();
-    datastructures::enums();
+    datastructures::arrays();
 
     // let fib = fibonacci(5);
 }

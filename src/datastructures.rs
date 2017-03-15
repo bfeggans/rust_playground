@@ -1,3 +1,5 @@
+use std::mem;
+
 struct Point {
     x: f64,
     y: f64
@@ -53,4 +55,56 @@ pub fn structures() {
 
     line.print_this_line();
     println!("The average X point is {}, and the average Y point is {}.", avg_point.x, avg_point.y);
+}
+
+pub fn options() {
+    let x = 3.0;
+    let y = 2.0;
+
+    let result: Option<f64> =
+        if y != 0.0 {
+            Some(x/y)
+        } else {
+            None
+        };
+
+    //way to handle option return val
+    match result {
+        Some(z) => println!("{} / {} = {}", x, y, z),
+        None => println!("Heyo - infinite")
+    }
+
+    //another way to handle option return val
+    if let Some(z) = result {
+        println!("z: {}", z);
+    }
+}
+
+pub fn arrays() {
+    let mut a:[i32;5] = [1,2,3,4,5];
+    a[0] = 10;
+
+    println!("a has {} elements, first is {}", a.len(), a[0]);
+    println!("debug a: {:?}", a);
+
+    if a != [1, 2, 3, 4, 5] {
+        println!("a not equal to [1, 2, 3, 4, 5]");
+    }
+
+    let b = [1u8; 10];
+            //^ Allows you to specify the type of initialized vals
+
+    for i in 0..b.len() {
+        println!("{}", b[i]);
+    }
+
+    println!("b took up {} bytes", mem::size_of_val(&b));
+
+    let matrix:[[f32;3]; 2] =
+    [
+        [1.0, 2.0, 5.0],
+        [0.5, 3.0, 4.0]
+    ];
+
+    println!("{:?}", matrix);
 }
