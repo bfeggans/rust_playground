@@ -108,3 +108,45 @@ pub fn arrays() {
 
     println!("{:?}", matrix);
 }
+
+pub fn vectors() {
+    let mut vector = Vec::new();
+    vector.push(1);
+    vector.push(2);
+    vector.push(3);
+
+    //usize is an unsigned number in the bit size of the machine
+    let index:usize = 0;
+    vector[index] = 20;
+
+    println!("vector = {:?}", vector);
+    println!("vector length = {:?}", vector.len());
+    println!("vector[0] = {}", vector[index]);
+
+    //for out of bounds exception cases. better than -> let blake = vector[6]; //causes panic
+    //vector.get returns an Option
+    match vector.get(6) {
+        Some(x) => println!("vector[6] = {}", x),
+        None => println!("No ELs, bruh.")
+    }
+
+    //looping over vector
+    for x in &vector {
+        println!("{}", x);
+    }
+
+    vector.push(804);
+
+    //remove value from vector
+    //let last_element = vector.pop(); //returns Option
+    match vector.pop() {
+        Some(x) => println!("{}", x),
+        None => println!("Nah, homie.")
+    }
+
+    //iteration while popping
+    while let Some(x) = vector.pop() {
+        println!("x = {}", x);
+    }
+    println!("{:?}", vector);
+}
