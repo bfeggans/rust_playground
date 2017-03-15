@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 mod stackheap;
 mod controlflow;
+mod datastructures;
 use std::mem;
 
 const GLOBAL:&'static str = "Blake"; //no fixed address
@@ -8,9 +9,23 @@ const GLOBAL:&'static str = "Blake"; //no fixed address
 fn main() {
     //println!("{}", GLOBAL);
     //stackheap::stack_and_heap();
+    // controlflow::match_stuff();
 
-    controlflow::match_stuff();
+    // datastructures::structures();
+    datastructures::enums();
+
+    // let fib = fibonacci(5);
 }
+
+// fn fibonacci(n: i64) -> i64 {
+//     if n == 0 {
+//         0
+//     } else if n == 1 {
+//         1
+//     } else {
+//         fibonacci(n - 1) + fibonacci(n - 2)
+//     }
+// }
 
 fn scope_and_shadowing() {
     let a = 123;

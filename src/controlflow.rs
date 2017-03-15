@@ -52,7 +52,7 @@ pub fn match_stuff() {
         44 => "UK",
         46 => "Sweden",
         7 => "Russia",
-        1...999 => "unknown",
+        1...999 => "unknown", //cannot use 1..999 type of range here
         _ => "invalid" //assuming valid codes are all in the range of 1 - 999
     };
 
