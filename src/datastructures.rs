@@ -205,3 +205,33 @@ pub fn strings() {
     from_slice_2 = from_slice_2.replace("Hello", "Sup");
     println!("{}", from_slice_2);
 }
+
+
+//tuples are kinda like arrays but you can use non-matching types
+fn sum_and_product(x: i32, y: i32) -> (i32, i32) {
+    (x + y, x * y)
+}
+
+pub fn tuples() {
+    let x = 3;
+    let y = 4;
+    let sum_product = sum_and_product(x, y);
+
+    println!("{:?}", sum_product);
+    println!("{0} + {1} = {2}, {0} + {1} = {3}", x, y, sum_product.0, sum_product.1);
+
+    //destructuring
+    //the structures must match
+    let (a, b) = sum_product;
+    println!("{}, {}", a, b);
+    let sp2 = sum_and_product(10, 12);
+    let combined = (sum_product, sp2);
+    println!("{:?}", combined);
+    println!("last item is {}", (combined.1).1);
+    //destructuring works the same
+    let ((c,d),(e,f)) = combined;
+    println!("first tuple is ({}, {}), second tuple is ({}, {})", c, d, e, f);
+    //to make a single element tuple use a comma
+    let single_tuple = (43,);
+    println!("{:?}", single_tuple);
+}
