@@ -162,3 +162,46 @@ fn use_slice(slice: &mut [i32]) {
     slice[0] = 432;
     println!("first element={}, len={}", slice[0], slice.len());
 }
+
+pub fn strings() {
+    //two different string types in Rust
+    //&str = string slice; static means that the string is statically allocated
+    let s:&'static str = "sup, yo?";
+
+    for c in s.chars().rev() {
+        println!("{}", c);
+    }
+
+    if let Some(first_char) = s.chars().nth(0) {
+        println!("First char is {}", first_char);
+    }
+
+    //String = heap allocated utf8 sequence
+    //much more flexible than &str
+    let mut letters = String::new();
+    let mut a = 'a' as u8;
+    while a <= ('z' as u8) { //TODO: Review this
+        letters.push(a as char);
+        letters.push_str(",");
+        a += 1;
+    }
+
+    println!("{}", letters);
+
+    //concatenation
+    let mut blake = String::new();
+
+    blake += "blake ";
+    blake += "feggans";
+
+    println!("{}", blake);
+
+    //string from string slice
+    let from_slice = String::from("Blake Feggans");
+    println!("{}", from_slice);
+    let mut from_slice_2 = "Hello, world!".to_string();
+    from_slice_2.remove(6);
+    from_slice_2.push_str("??");
+    from_slice_2 = from_slice_2.replace("Hello", "Sup");
+    println!("{}", from_slice_2);
+}
