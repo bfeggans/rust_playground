@@ -2,6 +2,7 @@
 mod stackheap;
 mod controlflow;
 mod datastructures;
+mod patternmatching;
 use std::mem;
 
 const GLOBAL:&'static str = "Blake"; //no fixed address
@@ -9,9 +10,9 @@ const GLOBAL:&'static str = "Blake"; //no fixed address
 fn main() {
     //println!("{}", GLOBAL);
     //stackheap::stack_and_heap();
-    // controlflow::match_stuff();
-
-    datastructures::tuples();
+    //controlflow::match_stuff();
+    //datastructures::tuples();
+    patternmatching::pattern_matching();
 
     // let fib = fibonacci(5);
 }
