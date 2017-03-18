@@ -235,3 +235,25 @@ pub fn tuples() {
     let single_tuple = (43,);
     println!("{:?}", single_tuple);
 }
+
+struct Point2<T> {
+    x: T,
+    y: T
+}
+
+struct Line2<T> {
+    start: Point2<T>,
+    end: Point2<T>
+}
+
+pub fn generics() {
+    //use case:
+    //say you have a struct like Point { x: f64, y: f64 }
+    //but you want to use integers to make a Point
+    //you can use generics for this
+    let a = Point2 {x: 0, y: 1}; //same as: let a:Point2<i32> = Point {x: 0, y: 1};
+    let b = Point2 {x: 1.2, y: 3.4};
+    let c = Point2 {x: 1, y: 3};
+
+    let d = Line2 { start: a, end: c };
+}

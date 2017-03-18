@@ -11,8 +11,8 @@ fn main() {
     //println!("{}", GLOBAL);
     //stackheap::stack_and_heap();
     //controlflow::match_stuff();
-    //datastructures::tuples();
-    patternmatching::pattern_matching();
+    //patternmatching::pattern_matching();
+    datastructures::generics();
 
     // let fib = fibonacci(5);
 }
