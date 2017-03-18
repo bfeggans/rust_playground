@@ -13,17 +13,17 @@ pub fn pattern_matching() {
         println!("{}: I have {} oranges", x, how_many(x));
     }
 
-    let point = (10,0);
+    let mut point = (10,0);
 
     match point {
         (0,0) => println!("at origin"),
         (0,y) => println!("on x axis, y = {}", y),
-        (mut x,0) => { //TODO: why can't i mutate the referenced val -> (ref x, 0)
-            x = x + 2;
+        (ref mut x,0) => { //you can mutate the referenced val
+            *x += 2;
             println!("on y axis, x = {}", x);
         },
         (x,y) => println!("x={}, y={}", x, y)
     }
 
-    println!("{:?}", point.0);
+    println!("Point.X={:?}", point.0);
 }

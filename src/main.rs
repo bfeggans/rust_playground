@@ -1,18 +1,21 @@
 #![allow(dead_code)]
+#![allow(unused_variables)]
 mod stackheap;
 mod controlflow;
 mod datastructures;
 mod patternmatching;
+mod functions;
 use std::mem;
 
 const GLOBAL:&'static str = "Blake"; //no fixed address
 
 fn main() {
-    //println!("{}", GLOBAL);
-    //stackheap::stack_and_heap();
-    //controlflow::match_stuff();
-    //patternmatching::pattern_matching();
-    datastructures::generics();
+    // println!("{}", GLOBAL);
+    // stackheap::stack_and_heap();
+    // controlflow::match_stuff();
+    // patternmatching::pattern_matching();
+    // datastructures::generics();
+    functions::funcs();
 
     // let fib = fibonacci(5);
 }
