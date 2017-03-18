@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["goodbye",""],["hello","Applies to code that follows it. So this is for the `hello()` function."]]});
