@@ -5,6 +5,7 @@ mod controlflow;
 mod datastructures;
 mod patternmatching;
 mod functions;
+mod borrowingownership;
 use std::mem;
 
 const GLOBAL:&'static str = "Blake"; //no fixed address
@@ -15,7 +16,8 @@ fn main() {
     // controlflow::match_stuff();
     // patternmatching::pattern_matching();
     // datastructures::generics();
-    functions::funcs();
+    // functions::funcs();
+    borrowingownership::borrowing();
 
     // let fib = fibonacci(5);
 }
