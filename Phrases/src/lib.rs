@@ -8,7 +8,8 @@ pub mod greetings {
 
 //built in testing support
 //only works when you're pointed to the directory
-#[test]
+#[test] // #[ignore] to ignore
+#[should_panic] //negative test case scenario
 fn english_greeting_correct() {
     assert_eq!("hello", greetings::english::hello());
 }
